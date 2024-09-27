@@ -53,7 +53,7 @@ resource "aws_iam_policy" "s3_access_policy" {
   })
 }
 
-resource "aws_iam_user_policy_attachment" "user_policy_attachment" {
+resource "aws_iam_user_policy_attachment" "s3_user_policy_attachment" {
   user       = var.iam_user_name
   policy_arn = aws_iam_policy.s3_access_policy.arn
 }
