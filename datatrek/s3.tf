@@ -32,8 +32,7 @@ resource "aws_iam_policy" "s3_access_policy" {
         "Effect" : "Allow",
         "Action" : [
           "s3:ListBucket",
-          "s3:GetBucketLocation",
-          "s3:GetObjectAttributes",
+          "s3:GetBucketLocation"
         ],
         "Resource" : [
           "${aws_s3_bucket.s3_datatrek_bucket.arn}"
@@ -44,7 +43,8 @@ resource "aws_iam_policy" "s3_access_policy" {
         "Action" : [
           "s3:PutObject",
           "s3:GetObject",
-          "s3:DeleteObject"
+          "s3:DeleteObject",
+          "s3:GetObjectAttributes"
         ],
         "Resource" : [
           "${aws_s3_bucket.s3_datatrek_bucket.arn}/*",
